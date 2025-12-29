@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedBull Racing - Sürücüler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                RedBull Racing
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="drivers.html">Sürücüler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Haberler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="races.html">Sıralama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Mağaza</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Sepetim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profil</a>
+                    </li>
+                    <li class="nav-item" id="loginNavItem">
+                        <a class="nav-link" href="login.html">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <span id="userNameNav"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Profil</a></li>
+                            <li id="adminNavLink" style="display: none;"><a class="dropdown-item" href="admin.html">Admin Paneli</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">Çıkış Yap</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h1 class="display-4 text-center mb-3">Sürücülerimiz</h1>
+            <p class="text-center text-muted">Takımımızın şampiyon sürücüleri</p>
+        </div>
+    </section>
+
+    <!-- Driver 1: Max Verstappen -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-4 text-center">
+                    <img src="images/max-verstappen.jpg" alt="Max Verstappen" class="driver-profile-img">
+                </div>
+                <div class="col-md-8">
+                    <h2 class="mb-3">Max Verstappen</h2>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <p><strong>Ülke:</strong> Hollanda</p>
+                            <p><strong>Doğum Tarihi:</strong> 30 Eylül 1997</p>
+                            <p><strong>Yaş:</strong> 27</p>
+                            <p><strong>Takım:</strong> RedBull Racing</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>F1 Kariyeri:</strong> 2015 - Devam Ediyor</p>
+                            <p><strong>Yarış Sayısı:</strong> 203</p>
+                            <p><strong>Kazandığı Yarışlar:</strong> 62</p>
+                            <p><strong>Pole Position:</strong> 42</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <h4>Kariyer İstatistikleri</h4>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>4x</h5>
+                                <p class="mb-0">Dünya Şampiyonu</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>62</h5>
+                                <p class="mb-0">Yarış Zaferi</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>42</h5>
+                                <p class="mb-0">Pole Position</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>112</h5>
+                                <p class="mb-0">Podyum</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mt-4">Biyografi</h4>
+                    <p>Max Verstappen, Formula 1 tarihinin en genç sürücülerinden biri olarak kariyerine başladı. 2015 yılında Toro Rosso ile F1'e adım attı ve 2016'da RedBull Racing'e geçti. 2021, 2022, 2023 ve 2024 yıllarında üst üste dört kez Dünya Şampiyonu oldu. Agresif sürüş stili ve mükemmel hız kontrolü ile tanınan Verstappen, Formula 1'in en dominant sürücülerinden biri haline gelmiştir. 2025 sezonunda da takımın lider sürücüsü olarak görev yapmaktadır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver 2: Yuki Tsunoda -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center order-md-2">
+                    <img src="images/yuki-tsunoda.jpg" alt="Yuki Tsunoda" class="driver-profile-img">
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h2 class="mb-3">Yuki Tsunoda</h2>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <p><strong>Ülke:</strong> Japonya</p>
+                            <p><strong>Doğum Tarihi:</strong> 11 Mayıs 2000</p>
+                            <p><strong>Yaş:</strong> 24</p>
+                            <p><strong>Takım:</strong> RedBull Racing</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>F1 Kariyeri:</strong> 2021 - Devam Ediyor</p>
+                            <p><strong>Yarış Sayısı:</strong> 85</p>
+                            <p><strong>En İyi Sonuç:</strong> 4. Sıra</p>
+                            <p><strong>Pole Position:</strong> 0</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <h4>Kariyer İstatistikleri</h4>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>0</h5>
+                                <p class="mb-0">Yarış Zaferi</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>0</h5>
+                                <p class="mb-0">Pole Position</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>0</h5>
+                                <p class="mb-0">Podyum</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>1</h5>
+                                <p class="mb-0">En Hızlı Tur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mt-4">Biyografi</h4>
+                    <p>Yuki Tsunoda, Formula 1'in en genç Japon sürücülerinden biridir. 2021 yılında AlphaTauri (eski adıyla Toro Rosso) ile F1 kariyerine başladı. Hızlı öğrenme yeteneği ve agresif sürüş stili ile dikkat çeken Tsunoda, 2025 sezonunda RedBull Racing'e terfi etti. Genç yaşına rağmen büyük potansiyel gösteren Tsunoda, takımın gelecekteki başarıları için önemli bir yatırımdır. Japonya'nın Formula 1'deki yeni umudu olarak görülmektedir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

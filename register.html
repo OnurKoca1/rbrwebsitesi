@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedBull Racing - Kayıt Ol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                RedBull Racing
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="drivers.html">Sürücüler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Haberler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="races.html">Sıralama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Mağaza</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Sepetim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Register Section -->
+    <section class="py-5" style="margin-top: 100px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-body p-5">
+                            <h2 class="text-center mb-4">Kayıt Ol</h2>
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label for="regUsername" class="form-label">Kullanıcı Adı</label>
+                                    <input type="text" class="form-control" id="regUsername" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regEmail" class="form-label">E-posta</label>
+                                    <input type="email" class="form-control" id="regEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regPassword" class="form-label">Şifre</label>
+                                    <input type="password" class="form-control" id="regPassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regPasswordConfirm" class="form-label">Şifre Tekrar</label>
+                                    <input type="password" class="form-control" id="regPasswordConfirm" required>
+                                </div>
+                                <div id="registerError" class="alert alert-danger" style="display: none;"></div>
+                                <button type="submit" class="btn btn-danger w-100 mb-3">Kayıt Ol</button>
+                            </form>
+                            <div class="text-center">
+                                <p class="text-muted mb-0">Zaten hesabınız var mı? <a href="login.html">Giriş Yap</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('regUsername').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const passwordConfirm = document.getElementById('regPasswordConfirm').value;
+            const errorDiv = document.getElementById('registerError');
+            
+            if (!username || !email || !password || !passwordConfirm) {
+                errorDiv.textContent = 'Lütfen tüm alanları doldurun.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (password !== passwordConfirm) {
+                errorDiv.textContent = 'Şifreler eşleşmiyor.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (password.length < 6) {
+                errorDiv.textContent = 'Şifre en az 6 karakter olmalıdır.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_URL}/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    alert('Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...');
+                    window.location.href = 'login.html';
+                } else {
+                    errorDiv.textContent = result.error || 'Kayıt başarısız';
+                    errorDiv.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Kayıt hatası:', error);
+                errorDiv.textContent = 'Kayıt olurken bir hata oluştu.';
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
+

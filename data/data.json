@@ -1,0 +1,161 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "sa",
+      "content": "sa",
+      "image": "images/news-1.jpg",
+      "date": "2025-12-28",
+      "author": "Admin"
+    },
+    {
+      "id": 2,
+      "title": "Merhaba",
+      "content": "sa",
+      "image": "https://cdn-6.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg",
+      "date": "2025-12-28",
+      "author": "Admin"
+    },
+    {
+      "id": 3,
+      "title": "Merhabalar",
+      "content": "Ferrari kariyerinin ilk yılında oldukça zorlanan Hamilton, sezon boyunca podyuma çıkamadı. Bu tablo, kariyerinde ilk kez bir sezonu podyumsuz tamamlaması anlamına geldi.\n\nHamilton, 2026’da yürürlüğe girecek yeni teknik regülasyonların kendisi için bir fırsat yaratmasını umut ediyor. Ancak padok kulislerinde Mercedes motorunun yeni dönemde referans olabileceği konuşuluyor.\n\nCollins, Sky F1’e yaptığı açıklamada şu ifadeleri kullandı: “Eğer 2026’yı düşünüyorsa, bence Mercedes’te kalmak daha doğru bir seçenek olurdu.”\n\nX\n00:00 / 00:39\nTakımların pilotları ikna etmeye çalışırken büyük vaatlerde bulunduğunu vurgulayan Collins, “Herkes size bir şey satmaya çalışıyor ama kimse size otomobilin ne kadar iyi olacağını gerçekten kanıtlayamıyor” dedi.\n\nHamilton’ın Ferrari’ye transferi, spor tarihinin en başarılı pilotunun en köklü takımla buluşması açısından büyük yankı uyandırmıştı. Ancak bu birliktelik, şu ana kadar beklenen sportif karşılığı veremedi.\n\nYine de Collins, Hamilton’ın bu kararı neden aldığını anlayabildiğini söyledi: “Kırmızı Ferrari’nin o küçük çocuk cazibesi devreye girdi. O arabayı sürme, kendini kırmızı tulumun içinde görme hayali.”\n\nCollins'in bu sözleri akıllara Sebastien Vettel'in o meşhur demecini getirdi: \"Herkes bir Ferrari fanıdır. Öyle olmadıklarını söyleseler de öyledirler. Mercedes'teki kişilere bile gitsen 'Biz Mercedes'iz en iyi takımız' diye böbürlenseler bile Ferrari fanıdırlar.\"\n\nBu hayalin herkes için çekici olduğunu belirten Collins, “Sezon başında hepimiz buna inandık. Harika olacak sandık ama yıl beklenenden çok daha zor geçti” ifadelerini kullandı.\n\nCollins’e göre, eğer hedef gerçekten 2026 ise, Hamilton bu sürece Mercedes’te daha iyi hazırlanabilirdi.\n:\n\n:\n:\n\n::\n:\n:\n:\n:\n::\n:\n:\n::\n::\n:\n\n::\n:\n:\n\n::\n:\n:\n:\n",
+      "image": "images/news-6.jpg",
+      "date": "2025-12-28",
+      "author": "Admin"
+    },
+    {
+      "id": 4,
+      "date": "2025-12-28",
+      "author": "Admin",
+      "title": "sa",
+      "content": "asfafasfassafasfas",
+      "image": "images/news-1.jpg"
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Max Verstappen",
+      "country": "Hollanda",
+      "birthDate": "1997-09-30",
+      "age": 27,
+      "team": "RedBull Racing",
+      "races": 203,
+      "wins": 62,
+      "poles": 42,
+      "podiums": 112,
+      "championships": 4
+    },
+    {
+      "id": 2,
+      "name": "Yuki Tsunoda",
+      "country": "Japonya",
+      "birthDate": "2000-05-11",
+      "age": 24,
+      "team": "RedBull Racing",
+      "races": 85,
+      "wins": 0,
+      "poles": 0,
+      "podiums": 0,
+      "championships": 0
+    }
+  ],
+  "races": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "RedBull Racing Tişört",
+      "price": 299,
+      "image": "images/product-tshirt.jpg",
+      "stock": 45
+    },
+    {
+      "id": 2,
+      "name": "RedBull Racing Hoodie",
+      "price": 1799,
+      "stock": 10,
+      "image": "images/product-hoodie.jpg",
+      "description": ""
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@redbullracing.com",
+      "password": "admin123",
+      "role": "admin",
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "username": "onurkoca95",
+      "email": "onurkoca95@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "createdAt": "2025-12-28T20:09:59.184Z"
+    }
+  ],
+  "standings": {
+    "drivers": [
+      {
+        "position": 1,
+        "name": "Lando Norris",
+        "points": 423
+      },
+      {
+        "position": 2,
+        "name": "Max Verstappen",
+        "points": 421
+      },
+      {
+        "position": 3,
+        "name": "Oscar Piastri",
+        "points": 410
+      },
+      {
+        "position": 4,
+        "name": "George Russell",
+        "points": 319
+      },
+      {
+        "position": 5,
+        "name": "Charles Leclerc",
+        "points": 242
+      },
+      {
+        "position": 6,
+        "name": "Yuki Tsunoda",
+        "points": 0
+      }
+    ],
+    "teams": [
+      {
+        "position": 1,
+        "name": "McLaren",
+        "points": 833
+      },
+      {
+        "position": 2,
+        "name": "Mercedes",
+        "points": 469
+      },
+      {
+        "position": 3,
+        "name": "RedBull Racing",
+        "points": 454
+      },
+      {
+        "position": 4,
+        "name": "Ferrari",
+        "points": 398
+      },
+      {
+        "position": 5,
+        "name": "Williams",
+        "points": 137
+      }
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+/* RedBull Racing Custom Styles */
+
+:root {
+    --redbull-red: #dc3545;
+    --redbull-blue: #0d6efd;
+    --redbull-dark: #0a0a0a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 76px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 500px;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Cards */
+.news-card,
+.driver-card,
+.product-card {
+    border: 1px solid #dee2e6;
+}
+
+.news-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+/* Buttons */
+.btn-danger {
+    background-color: var(--redbull-blue);
+    border-color: var(--redbull-blue);
+}
+
+.btn-danger:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-outline-danger {
+    color: var(--redbull-blue);
+    border-color: var(--redbull-blue);
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--redbull-blue);
+    border-color: var(--redbull-blue);
+    color: white;
+}
+
+/* Navbar */
+.navbar-dark {
+    background-color: var(--redbull-dark) !important;
+}
+
+/* Driver Profile */
+.driver-profile-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.stats-card {
+    background-color: #343a40;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* News Detail */
+.news-detail-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Shop */
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--redbull-red);
+}
+
+/* Admin Panel */
+.admin-sidebar {
+    min-height: calc(100vh - 76px);
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+}
+
+.admin-content {
+    min-height: calc(100vh - 76px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 350px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}

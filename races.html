@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedBull Racing - Sıralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                RedBull Racing
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="drivers.html">Sürücüler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Haberler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="races.html">Sıralama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Mağaza</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Sepetim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profil</a>
+                    </li>
+                    <li class="nav-item" id="loginNavItem">
+                        <a class="nav-link" href="login.html">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <span id="userNameNav"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Profil</a></li>
+                            <li id="adminNavLink" style="display: none;"><a class="dropdown-item" href="admin.html">Admin Paneli</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">Çıkış Yap</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h1 class="display-4 text-center mb-3">Şampiyonluk Sıralaması</h1>
+            <p class="text-center text-muted">2025 Formula 1 Sezonu - Final Sıralaması</p>
+        </div>
+    </section>
+
+    <!-- Championship Standings -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Şampiyonluk Sıralaması</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #0d6efd;">
+                            <h5 class="mb-0">Sürücüler Şampiyonası</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Poz.</th>
+                                            <th>Sürücü</th>
+                                            <th>Puan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="driversStandings">
+                                        <tr>
+                                            <td colspan="3" class="text-center">Yükleniyor...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #0d6efd;">
+                            <h5 class="mb-0">Takımlar Şampiyonası</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Poz.</th>
+                                            <th>Takım</th>
+                                            <th>Puan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="teamsStandings">
+                                        <tr>
+                                            <td colspan="3" class="text-center">Yükleniyor...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Şampiyonluk sıralamasını yükle
+        async function loadStandings() {
+            try {
+                const response = await fetch(`${API_URL}/standings`);
+                const standings = await response.json();
+                
+                // Sürücüler sıralaması
+                const driversTbody = document.getElementById('driversStandings');
+                driversTbody.innerHTML = '';
+                
+                if (standings.drivers && standings.drivers.length > 0) {
+                    standings.drivers.forEach(driver => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${driver.position}</td>
+                            <td>${driver.name}</td>
+                            <td>${driver.points}</td>
+                        `;
+                        driversTbody.appendChild(row);
+                    });
+                } else {
+                    driversTbody.innerHTML = '<tr><td colspan="3" class="text-center">Veri bulunamadı</td></tr>';
+                }
+                
+                // Takımlar sıralaması
+                const teamsTbody = document.getElementById('teamsStandings');
+                teamsTbody.innerHTML = '';
+                
+                if (standings.teams && standings.teams.length > 0) {
+                    standings.teams.forEach(team => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${team.position}</td>
+                            <td>${team.name}</td>
+                            <td>${team.points}</td>
+                        `;
+                        teamsTbody.appendChild(row);
+                    });
+                } else {
+                    teamsTbody.innerHTML = '<tr><td colspan="3" class="text-center">Veri bulunamadı</td></tr>';
+                }
+            } catch (error) {
+                console.error('Sıralama yüklenirken hata:', error);
+                document.getElementById('driversStandings').innerHTML = '<tr><td colspan="3" class="text-center text-danger">Sıralama yüklenirken bir hata oluştu.</td></tr>';
+                document.getElementById('teamsStandings').innerHTML = '<tr><td colspan="3" class="text-center text-danger">Sıralama yüklenirken bir hata oluştu.</td></tr>';
+            }
+        }
+        
+        // Sayfa yüklendiğinde sıralamayı çek
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStandings();
+        });
+    </script>
+</body>
+</html>
+
