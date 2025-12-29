@@ -1,30 +1,14 @@
 <!DOCTYPE html>
-<!-- HTML5 doküman tipi -->
 <html lang="tr">
-<!-- HTML kök elementi - Türkçe dil desteği -->
 <head>
-    <!-- Head bölümü -->
-    
-    <!-- Karakter kodlaması - UTF-8 -->
     <meta charset="UTF-8">
-    
-    <!-- Viewport - Mobil uyumluluk -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Sayfa başlığı -->
     <title>RedBull Racing - Haber Detayı</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <!-- Özel CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation - Üst menü -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -41,7 +25,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="drivers.html">Sürücüler</a>
                     </li>
-                    <!-- active: Haberler menüsü aktif -->
                     <li class="nav-item">
                         <a class="nav-link active" href="news.html">Haberler</a>
                     </li>
@@ -75,26 +58,15 @@
             </div>
         </div>
     </nav>
-
-    <!-- News Detail Section - Haber detay bölümü -->
-    <!-- py-5: Padding y (dikey) 5 birim -->
-    <!-- style="margin-top: 76px;": Navbar yüksekliği kadar üstten boşluk -->
     <section class="py-5" style="margin-top: 76px;">
         <div class="container">
-            <!-- row: Bootstrap grid satırı -->
             <div class="row">
-                <!-- col-lg-8: Büyük ekranlarda 8 kolon -->
-                <!-- mx-auto: Margin x auto - yatay olarak ortala (margin-left ve margin-right auto) -->
                 <div class="col-lg-8 mx-auto">
-                    <!-- id="newsDetail": JavaScript ile buraya haber detayı eklenecek -->
                     <div id="newsDetail">
-                        <!-- Yükleme göstergesi -->
                         <div class="text-center">
-                            <!-- spinner-border: Bootstrap yükleme animasyonu -->
                             <div class="spinner-border text-danger" role="status">
                                 <span class="visually-hidden">Yükleniyor...</span>
                             </div>
-                            <!-- mt-2: Margin top 2 birim -->
                             <p class="mt-2">Haber yükleniyor...</p>
                         </div>
                     </div>
@@ -102,14 +74,9 @@
             </div>
         </div>
     </section>
-
-    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Auth.js - API_URL ve navbar fonksiyonları -->
     <script src="js/auth.js"></script>
-    
-    <!-- News-detail.js - Haber detay sayfasına özel JavaScript -->
+    <script src="js/common.js"></script>
     <script src="js/news-detail.js"></script>
 </body>
 </html>

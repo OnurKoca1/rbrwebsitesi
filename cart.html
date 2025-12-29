@@ -1,30 +1,14 @@
 <!DOCTYPE html>
-<!-- HTML5 doküman tipi -->
 <html lang="tr">
-<!-- HTML kök elementi - Türkçe dil desteği -->
 <head>
-    <!-- Head bölümü -->
-    
-    <!-- Karakter kodlaması - UTF-8 -->
     <meta charset="UTF-8">
-    
-    <!-- Viewport - Mobil uyumluluk -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Sayfa başlığı -->
     <title>RedBull Racing - Sepetim</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <!-- Özel CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation - Üst menü -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -50,7 +34,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="shop.html">Mağaza</a>
                     </li>
-                    <!-- active: Bu sayfa aktif -->
                     <li class="nav-item">
                         <a class="nav-link active" href="cart.html">Sepetim</a>
                     </li>
@@ -75,24 +58,14 @@
             </div>
         </div>
     </nav>
-
-    <!-- Page Header - Sayfa başlık bölümü -->
-    <!-- py-4: Padding y (dikey) 4 birim - daha az boşluk -->
-    <!-- bg-light: Açık gri arka plan -->
-    <!-- style="margin-top: 76px;": Navbar yüksekliği kadar üstten boşluk (navbar fixed olduğu için) -->
     <section class="py-4 bg-light" style="margin-top: 76px;">
         <div class="container">
-            <!-- mb-0: Margin bottom 0 - alttan boşluk yok -->
             <h2 class="text-center mb-0">Sepetim</h2>
         </div>
     </section>
-
-    <!-- Cart Section - Sepet içeriği bölümü -->
     <section class="py-5">
         <div class="container">
-            <!-- id="cartContent": JavaScript ile buraya sepet içeriği eklenecek -->
             <div id="cartContent">
-                <!-- Yükleme göstergesi -->
                 <div class="text-center">
                     <div class="spinner-border text-danger" role="status">
                         <span class="visually-hidden">Yükleniyor...</span>
@@ -101,14 +74,9 @@
             </div>
         </div>
     </section>
-
-    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Auth.js - API_URL ve navbar fonksiyonları -->
     <script src="js/auth.js"></script>
-    
-    <!-- Cart.js - Sepet sayfasına özel JavaScript -->
+    <script src="js/common.js"></script>
     <script src="js/cart.js"></script>
 </body>
 </html>

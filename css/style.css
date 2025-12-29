@@ -1,244 +1,91 @@
-/* ==================== REDBULL RACING CUSTOM STYLES ==================== */
-/* Bu dosya projeye özel CSS stillerini içerir */
-/* Bootstrap stillerini override eder ve özel tasarımlar ekler */
-
-/* ==================== BODY STYLES ==================== */
-
-/* body: Tüm sayfa için genel stiller */
 body {
-    /* font-family: Yazı tipi ailesi - Windows'ta Segoe UI, yoksa diğerleri */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    /* padding-top: Üstten boşluk - navbar fixed olduğu için içerik altında kalmaması için */
-    /* 76px: Navbar yüksekliği */
     padding-top: 76px;
 }
 
-/* ==================== HERO SECTION (ANA SAYFA ÜST BÖLÜM) ==================== */
-
-/* .hero-section: Ana sayfanın üst kısmındaki büyük görsel bölüm */
 .hero-section {
-    /* position: relative - İçindeki absolute elementlerin referansı */
     position: relative;
-    
-    /* height: Sabit yükseklik (500px) */
     height: 500px;
-    
-    /* background-image: Arka plan resmi */
     background-image: url('../images/hero-bg.jpg');
-    
-    /* background-size: cover - Resmi kırpmadan alanı doldur */
     background-size: cover;
-    
-    /* background-position: center - Resmi ortala */
     background-position: center;
-    
-    /* display: flex - Flexbox layout */
     display: flex;
-    
-    /* align-items: center - Dikey olarak ortala */
     align-items: center;
 }
 
-/* .hero-overlay: Hero section üzerindeki koyu katman */
 .hero-overlay {
-    /* position: absolute - Parent'a göre konumlanır */
     position: absolute;
-    
-    /* top, left, right, bottom: 0 - Tüm alanı kapla */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    
-    /* background: rgba(0, 0, 0, 0.5) - Yarı saydam siyah (50% opaklık) */
-    /* Yazıların okunabilirliğini artırır */
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* .hero-content: Hero section içindeki içerik */
 .hero-content {
-    /* position: relative - Overlay'in üstünde görünmesi için */
     position: relative;
-    
-    /* z-index: 1 - Overlay'in (z-index: 0) üstünde */
     z-index: 1;
 }
 
-/* ==================== CARD STYLES (KART STİLLERİ) ==================== */
-
-/* .news-card, .driver-card, .product-card: Haber, sürücü ve ürün kartları */
 .news-card,
 .driver-card,
 .product-card {
-    /* border: 1px solid #dee2e6 - Açık gri kenarlık */
     border: 1px solid #dee2e6;
 }
 
-/* Haber kartındaki görseller */
 .news-card img {
-    /* height: 200px - Sabit yükseklik */
     height: 200px;
-    
-    /* object-fit: cover - Görseli kırpmadan alanı doldur */
     object-fit: cover;
 }
 
-/* Ürün kartındaki görseller */
 .product-card img {
-    /* width: 100% - Genişliği tam doldur */
     width: 100%;
-    
-    /* height: 300px - Sabit yükseklik */
     height: 300px;
-    
-    /* object-fit: contain - Görseli kırpmadan içine sığdır */
     object-fit: contain;
-    
-    /* object-position: center - Görseli ortala */
     object-position: center;
-    
-    /* background-color: #f8f9fa - Açık gri arka plan (görsel küçükse) */
     background-color: #f8f9fa;
-    
-    /* padding: 10px - İçeriden boşluk */
     padding: 10px;
 }
 
-/* ==================== BUTTON STYLES (BUTON STİLLERİ) ==================== */
 
-/* .btn-danger: Kırmızı buton (CSS'de maviye çevrilmiş) */
-.btn-danger {
-    /* background-color: #0d6efd - Bootstrap primary blue rengi */
-    background-color: #0d6efd;
-    
-    /* border-color: #0d6efd - Kenarlık rengi */
-    border-color: #0d6efd;
-}
-
-/* .btn-danger:hover: Butona fare ile gelindiğinde */
-.btn-danger:hover {
-    /* background-color: #0b5ed7 - Daha koyu mavi */
-    background-color: #0b5ed7;
-    
-    /* border-color: #0a58ca - Daha koyu kenarlık */
-    border-color: #0a58ca;
-}
-
-/* .btn-outline-danger: Çerçeveli buton (içi boş) */
-.btn-outline-danger {
-    /* color: #0d6efd - Yazı rengi mavi */
-    color: #0d6efd;
-    
-    /* border-color: #0d6efd - Kenarlık rengi mavi */
-    border-color: #0d6efd;
-}
-
-/* .btn-outline-danger:hover: Çerçeveli butona fare ile gelindiğinde */
-.btn-outline-danger:hover {
-    /* background-color: #0d6efd - Arka plan mavi olur */
-    background-color: #0d6efd;
-    
-    /* border-color: #0d6efd - Kenarlık mavi kalır */
-    border-color: #0d6efd;
-    
-    /* color: white - Yazı rengi beyaz olur */
-    color: white;
-}
-
-/* ==================== NAVBAR STYLES ==================== */
-
-/* .navbar-dark: Koyu tema navbar */
 .navbar-dark {
-    /* background-color: #0a0a0a - Çok koyu siyah */
-    /* !important: Bootstrap'in varsayılan rengini override eder */
     background-color: #0a0a0a !important;
 }
 
-/* ==================== DRIVER PROFILE STYLES ==================== */
-
-/* .driver-profile-img: Sürücü profil sayfasındaki görseller */
 .driver-profile-img {
-    /* width: 100% - Genişliği tam doldur */
     width: 100%;
-    
-    /* max-width: 400px - Maksimum genişlik (büyük ekranlarda çok büyümesin) */
     max-width: 400px;
-    
-    /* border-radius: 10px - Köşeleri yuvarlat */
     border-radius: 10px;
 }
 
-/* .stats-card: İstatistik kartı (sürücü sayfasında) */
 .stats-card {
-    /* background-color: #343a40 - Koyu gri arka plan */
     background-color: #343a40;
-    
-    /* color: white - Beyaz yazı */
     color: white;
-    
-    /* border-radius: 10px - Köşeleri yuvarlat */
     border-radius: 10px;
-    
-    /* padding: 20px - İçeriden boşluk */
     padding: 20px;
-    
-    /* margin-bottom: 20px - Alttan boşluk */
     margin-bottom: 20px;
 }
 
-/* ==================== NEWS DETAIL STYLES ==================== */
-
-/* .news-detail-img: Haber detay sayfasındaki görsel */
 .news-detail-img {
-    /* width: 100% - Genişliği tam doldur */
     width: 100%;
-    
-    /* height: 400px - Sabit yükseklik */
     height: 400px;
-    
-    /* object-fit: cover - Görseli kırpmadan alanı doldur */
     object-fit: cover;
-    
-    /* border-radius: 10px - Köşeleri yuvarlat */
     border-radius: 10px;
-    
-    /* margin-bottom: 30px - Alttan boşluk */
     margin-bottom: 30px;
 }
 
-/* ==================== SHOP STYLES ==================== */
-
-/* .product-price: Ürün fiyatı */
 .product-price {
-    /* font-size: 1.5rem - Büyük yazı (24px) */
     font-size: 1.5rem;
-    
-    /* font-weight: bold - Kalın yazı */
     font-weight: bold;
-    
-    /* color: #dc3545 - Kırmızı renk (Bootstrap danger) */
     color: #dc3545;
 }
 
-/* ==================== ADMIN PANEL STYLES ==================== */
-
-/* .admin-sidebar: Admin panel sol menü */
 .admin-sidebar {
-    /* min-height: calc(100vh - 76px) - Minimum yükseklik (ekran yüksekliği - navbar) */
-    /* 100vh: Viewport height (ekran yüksekliği) */
     min-height: calc(100vh - 76px);
-    
-    /* background-color: #f8f9fa - Açık gri arka plan */
     background-color: #f8f9fa;
-    
-    /* border-right: 1px solid #dee2e6 - Sağda ince gri çizgi */
     border-right: 1px solid #dee2e6;
 }
 
-/* .admin-content: Admin panel ana içerik alanı */
 .admin-content {
-    /* min-height: calc(100vh - 76px) - Minimum yükseklik (ekran yüksekliği - navbar) */
     min-height: calc(100vh - 76px);
 }
-

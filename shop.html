@@ -1,30 +1,14 @@
 <!DOCTYPE html>
-<!-- HTML5 doküman tipi -->
 <html lang="tr">
-<!-- HTML kök elementi - Türkçe dil desteği -->
 <head>
-    <!-- Head bölümü -->
-    
-    <!-- Karakter kodlaması - UTF-8 -->
     <meta charset="UTF-8">
-    
-    <!-- Viewport - Mobil uyumluluk -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Sayfa başlığı -->
     <title>RedBull Racing - Mağaza</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <!-- Özel CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation - Üst menü (tüm sayfalarda aynı yapı) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -47,7 +31,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="races.html">Sıralama</a>
                     </li>
-                    <!-- active: Bu sayfa aktif (mavi renkte) -->
                     <li class="nav-item">
                         <a class="nav-link active" href="shop.html">Mağaza</a>
                     </li>
@@ -75,30 +58,16 @@
             </div>
         </div>
     </nav>
-
-    <!-- Page Header - Sayfa başlık bölümü -->
-    <!-- py-5: Padding y (dikey) 5 birim -->
-    <!-- bg-light: Açık gri arka plan -->
     <section class="py-5 bg-light">
         <div class="container">
-            <!-- display-4: Büyük başlık -->
-            <!-- text-center: Ortalanmış metin -->
             <h1 class="display-4 text-center mb-3">Mağaza</h1>
-            <!-- text-muted: Soluk gri renk -->
             <p class="text-center text-muted">RedBull Racing resmi ürünleri</p>
         </div>
     </section>
-
-    <!-- Shop Section - Ürünler bölümü -->
     <section class="py-5">
         <div class="container">
-            <!-- row: Bootstrap grid satırı -->
-            <!-- g-4: Gap 4 birim - öğeler arası boşluk -->
-            <!-- id="productGrid": JavaScript ile buraya ürünler eklenecek -->
             <div class="row g-4" id="productGrid">
-                <!-- Yükleme göstergesi -->
                 <div class="col-12 text-center">
-                    <!-- spinner-border: Dönen yükleme animasyonu -->
                     <div class="spinner-border text-danger" role="status">
                         <span class="visually-hidden">Yükleniyor...</span>
                     </div>
@@ -106,14 +75,9 @@
             </div>
         </div>
     </section>
-
-    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Auth.js - API_URL ve navbar fonksiyonları -->
     <script src="js/auth.js"></script>
-    
-    <!-- Shop.js - Mağaza sayfasına özel JavaScript -->
+    <script src="js/common.js"></script>
     <script src="js/shop.js"></script>
 </body>
 </html>

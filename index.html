@@ -1,130 +1,58 @@
 <!DOCTYPE html>
-<!-- HTML5 doküman tipi - tarayıcıya bu dosyanın HTML5 standardında olduğunu belirtir -->
 <html lang="tr">
-<!-- HTML kök elementi - lang="tr" sayfanın Türkçe olduğunu belirtir (arama motorları ve ekran okuyucular için) -->
 <head>
-    <!-- Head bölümü - sayfa meta bilgileri, bağlantılar ve başlık burada -->
-    
-    <!-- Karakter kodlaması - Türkçe karakterlerin (ğ, ü, ş, ı, ö, ç) doğru görüntülenmesi için UTF-8 -->
     <meta charset="UTF-8">
-    
-    <!-- Viewport ayarı - mobil cihazlarda responsive görünüm için -->
-    <!-- width=device-width: Sayfa genişliği cihaz genişliğine eşit -->
-    <!-- initial-scale=1.0: Sayfa ilk yüklendiğinde %100 zoom seviyesinde -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Sayfa başlığı - tarayıcı sekmesinde görünecek başlık -->
     <title>RedBull Racing - Ana Sayfa</title>
-    
-    <!-- Bootstrap 5.3.0 CSS kütüphanesi - hazır stil ve bileşenler için (butonlar, kartlar, grid sistemi) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap Icons - ikonlar için (oklar, kalp, kullanıcı vb.) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <!-- Özel CSS dosyamız - projeye özel stiller (renkler, özel tasarımlar) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation - Üst menü çubuğu -->
-    <!-- navbar: Bootstrap navbar bileşeni - sayfanın üst kısmında sabit menü -->
-    <!-- navbar-expand-lg: Büyük ekranlarda (≥992px) menü genişletilmiş şekilde gösterilir -->
-    <!-- navbar-dark: Koyu tema için açık renkli metin -->
-    <!-- bg-dark: Koyu arka plan rengi -->
-    <!-- fixed-top: Sayfanın üstüne sabitlenmiş, scroll yapınca da görünür kalır -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <!-- container: Bootstrap container - içeriği ortalar ve genişliği sınırlar (max-width) -->
         <div class="container">
-            <!-- Logo/Marka adı - tıklanınca ana sayfaya gider -->
             <a class="navbar-brand" href="index.html">
                 RedBull Racing
             </a>
-            
-            <!-- Mobil menü butonu - küçük ekranlarda görünür (hamburger menü) -->
-            <!-- navbar-toggler: Mobil menü açma/kapama butonu -->
-            <!-- data-bs-toggle="collapse": Bootstrap collapse özelliğini aktif eder -->
-            <!-- data-bs-target="#navbarNav": Hangi elementi açıp kapatacağını belirtir -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <!-- Hamburger menü ikonu (3 çizgi) -->
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <!-- Menü içeriği - mobilde gizli, büyük ekranda görünür -->
-            <!-- collapse: Başlangıçta mobilde gizli, butona tıklanınca açılır -->
-            <!-- navbar-collapse: Menü öğelerini düzenler -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- navbar-nav: Menü öğeleri listesi -->
-                <!-- ms-auto: Margin start auto - öğeleri sağa hizalar (margin-left: auto) -->
                 <ul class="navbar-nav ms-auto">
-                    <!-- Ana Sayfa menü öğesi -->
                     <li class="nav-item">
-                        <!-- nav-link: Menü linki stili -->
-                        <!-- active: Aktif sayfa, farklı renkte görünür (mavi) -->
                         <a class="nav-link active" href="index.html">Ana Sayfa</a>
                     </li>
-                    
-                    <!-- Sürücüler menü öğesi -->
                     <li class="nav-item">
                         <a class="nav-link" href="drivers.html">Sürücüler</a>
                     </li>
-                    
-                    <!-- Haberler menü öğesi -->
                     <li class="nav-item">
                         <a class="nav-link" href="news.html">Haberler</a>
                     </li>
-                    
-                    <!-- Sıralama menü öğesi -->
                     <li class="nav-item">
                         <a class="nav-link" href="races.html">Sıralama</a>
                     </li>
-                    
-                    <!-- Mağaza menü öğesi -->
                     <li class="nav-item">
                         <a class="nav-link" href="shop.html">Mağaza</a>
                     </li>
-                    
-                    <!-- Sepetim menü öğesi -->
                     <li class="nav-item">
                         <a class="nav-link" href="cart.html">Sepetim</a>
                     </li>
-                    
-                    <!-- Profil menü öğesi -->
                     <li class="nav-item">
                         <a class="nav-link" href="profile.html">Profil</a>
                     </li>
-                    
-                    <!-- Giriş Yap butonu - kullanıcı giriş yapmamışsa görünür -->
-                    <!-- id="loginNavItem": JavaScript ile kontrol edilir, giriş yapınca gizlenir (auth.js) -->
                     <li class="nav-item" id="loginNavItem">
                         <a class="nav-link" href="login.html">Giriş Yap</a>
                     </li>
-                    
-                    <!-- Kullanıcı menüsü - giriş yapmış kullanıcı için dropdown menü -->
-                    <!-- dropdown: Bootstrap dropdown menü bileşeni -->
-                    <!-- style="display: none;": Başlangıçta gizli, JavaScript ile gösterilir -->
                     <li class="nav-item dropdown" id="userNavItem" style="display: none;">
-                        <!-- dropdown-toggle: Dropdown menüyü açan buton -->
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
-                            <!-- Kullanıcı adı buraya JavaScript ile yazılacak (auth.js'deki updateNavbar fonksiyonu) -->
                             <span id="userNameNav"></span>
                         </a>
-                        
-                        <!-- Dropdown menü içeriği - tıklanınca açılır -->
-                        <!-- dropdown-menu: Açılır menü içeriği -->
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="profile.html">Profil</a></li>
-                            
-                            <!-- Admin Paneli linki - sadece admin kullanıcılar için görünür -->
-                            <!-- id="adminNavLink": JavaScript ile kontrol edilir (auth.js) -->
                             <li id="adminNavLink" style="display: none;">
                                 <a class="dropdown-item" href="admin.html">Admin Paneli</a>
                             </li>
-                            
-                            <!-- Ayırıcı çizgi -->
                             <li><hr class="dropdown-divider"></li>
-                            
-                            <!-- Çıkış Yap butonu -->
-                            <!-- onclick="logout()": Çıkış fonksiyonunu çağırır (auth.js'de tanımlı) -->
                             <li><a class="dropdown-item" href="#" onclick="logout()">Çıkış Yap</a></li>
                         </ul>
                     </li>
@@ -132,135 +60,56 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section - Ana sayfa üst bölümü, büyük görsel ve başlık -->
-    <!-- hero-section: CSS'de tanımlı özel stil, arka plan resmi ile (images/hero-bg.jpg) -->
     <section class="hero-section">
-        <!-- Koyu overlay - resmin üzerine koyu bir katman, yazıların okunabilirliğini artırır -->
-        <!-- hero-overlay: CSS'de rgba(0, 0, 0, 0.5) ile yarı saydam siyah katman -->
         <div class="hero-overlay"></div>
-        
-        <!-- container: İçeriği ortalar ve genişliği sınırlar -->
-        <!-- hero-content: CSS'de z-index: 1 ile overlay'in üstünde görünür -->
         <div class="container hero-content">
-            <!-- row: Bootstrap grid satırı -->
-            <!-- align-items-center: Dikey olarak ortalar (flexbox özelliği) -->
             <div class="row align-items-center">
-                <!-- col-lg-6: Büyük ekranlarda (≥992px) 6 kolon (yarı genişlik) -->
                 <div class="col-lg-6">
-                    <!-- Ana başlık -->
-                    <!-- display-3: Bootstrap'in en büyük başlık stili (2.5rem) -->
-                    <!-- fw-bold: Font weight bold - kalın yazı -->
-                    <!-- text-white: Beyaz renk -->
-                    <!-- mb-4: Margin bottom 4 birim (1.5rem) -->
                     <h1 class="display-3 fw-bold text-white mb-4">RED BULL RACING</h1>
-                    
-                    <!-- Alt başlık/açıklama -->
-                    <!-- lead: Bootstrap'in vurgulu paragraf stili (daha büyük font) -->
                     <p class="lead text-white mb-4">Formula 1'in en başarılı takımlarından biri. Hız, teknoloji ve mükemmellik.</p>
-                    
-                    <!-- Butonlar -->
-                    <!-- btn: Bootstrap buton stili -->
-                    <!-- btn-lg: Büyük buton (padding ve font-size artırılmış) -->
-                    <!-- me-3: Margin end (sağ) 3 birim (1rem) -->
-                    <!-- style: Inline stil ile mavi arka plan rengi (#0d6efd) -->
-                    <a href="races.html" class="btn text-white btn-lg me-3" style="background-color: #0d6efd;">Puan Sıralaması</a>
-                    
-                    <!-- btn-danger: CSS'de mavi renge çevrilmiş (aslında kırmızı değil, style.css'de override edilmiş) -->
-                    <a href="news.html" class="btn btn-danger btn-lg">Son Haberler</a>
+                    <a href="races.html" class="btn btn-primary btn-lg me-3">Puan Sıralaması</a>
+                    <a href="news.html" class="btn btn-primary btn-lg">Son Haberler</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Latest News Section - Son haberler bölümü -->
-    <!-- py-5: Padding y (dikey) 5 birim - üst ve alt boşluk (3rem) -->
     <section class="py-5">
-        <!-- container: İçeriği ortalar ve genişliği sınırlar -->
         <div class="container">
-            <!-- Başlık -->
-            <!-- text-center: Metni ortalar -->
-            <!-- mb-5: Margin bottom 5 birim (3rem) -->
             <h2 class="text-center mb-5">Son Haberler</h2>
-            
-            <!-- Haberlerin gösterileceği container -->
-            <!-- row: Bootstrap grid satırı -->
-            <!-- g-4: Gap 4 birim - öğeler arası boşluk (1.5rem) -->
-            <!-- id="latestNews": JavaScript ile buraya haberler eklenecek -->
             <div class="row g-4" id="latestNews">
-                <!-- Yükleme göstergesi - başlangıçta gösterilir, haberler yüklenince kaldırılır -->
-                <!-- col-12: Tüm genişliği kaplar (12 kolon) -->
                 <div class="col-12 text-center">
-                    <!-- spinner-border: Bootstrap yükleme animasyonu (dönen daire) -->
-                    <!-- text-danger: CSS'de mavi renge çevrilmiş -->
                     <div class="spinner-border text-danger" role="status">
-                        <!-- Görsel olarak gizli ama ekran okuyucular için mevcut (erişilebilirlik) -->
                         <span class="visually-hidden">Yükleniyor...</span>
                     </div>
                 </div>
             </div>
-            
-            <!-- Tüm haberleri gör butonu -->
-            <!-- mt-4: Margin top 4 birim (1.5rem) -->
             <div class="text-center mt-4">
-                <a href="news.html" class="btn btn-danger">Tüm Haberleri Gör</a>
+                <a href="news.html" class="btn btn-primary">Tüm Haberleri Gör</a>
             </div>
         </div>
     </section>
-
-    <!-- Drivers Section - Sürücüler bölümü -->
-    <!-- bg-light: Açık gri arka plan rengi (#f8f9fa) -->
     <section class="py-5 bg-light">
         <div class="container">
-            <!-- Başlık -->
             <h2 class="text-center mb-5">Sürücülerimiz</h2>
-            
-            <!-- Sürücü kartları için grid -->
             <div class="row g-4">
-                <!-- Max Verstappen kartı -->
-                <!-- col-md-6: Orta ekranlarda (≥768px) 6 kolon (yarı genişlik) -->
                 <div class="col-md-6">
-                    <!-- card: Bootstrap kart bileşeni - içerik için kutu -->
-                    <!-- driver-card: Özel CSS sınıfı (border, stil) -->
-                    <!-- h-100: Height 100% - kartların yüksekliğini eşitler (flexbox) -->
                     <div class="card driver-card h-100">
-                        <!-- row: Kart içinde grid satırı -->
-                        <!-- g-0: Gap 0 - içeride boşluk yok (resim ve metin arasında) -->
                         <div class="row g-0">
-                            <!-- Sürücü fotoğrafı -->
-                            <!-- col-md-4: Orta ekranlarda 4 kolon (resim için) -->
                             <div class="col-md-4">
-                                <!-- img-fluid: Responsive resim (max-width: 100%, height: auto) -->
-                                <!-- rounded-start: Sol üst ve sol alt köşeleri yuvarlatır -->
-                                <!-- h-100: Yükseklik 100% (kart yüksekliğine eşit) -->
-                                <!-- object-fit: cover: Resmi kırpmadan doldurur (aspect ratio korunur) -->
                                 <img src="images/max-verstappen.jpg" class="img-fluid rounded-start h-100" alt="Max Verstappen" style="object-fit: cover;">
                             </div>
-                            
-                            <!-- Sürücü bilgileri -->
-                            <!-- col-md-8: Orta ekranlarda 8 kolon (metin için) -->
                             <div class="col-md-8">
-                                <!-- card-body: Kart içeriği (padding ekler) -->
                                 <div class="card-body">
-                                    <!-- card-title: Kart başlığı stili (margin-bottom ekler) -->
                                     <h5 class="card-title">Max Verstappen</h5>
-                                    
-                                    <!-- card-text: Kart metin stili -->
-                                    <!-- strong: Kalın yazı (font-weight: bold) -->
                                     <p class="card-text"><strong>Ülke:</strong> Hollanda</p>
                                     <p class="card-text"><strong>Yaş:</strong> 27</p>
                                     <p class="card-text"><strong>Kazandığı Yarışlar:</strong> 62</p>
-                                    
-                                    <!-- Detaylı bilgi butonu -->
-                                    <!-- btn-sm: Küçük buton (padding ve font-size azaltılmış) -->
-                                    <a href="drivers.html" class="btn btn-sm btn-danger">Detaylı Bilgi</a>
+                                    <a href="drivers.html" class="btn btn-sm btn-primary">Detaylı Bilgi</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Yuki Tsunoda kartı - aynı yapı -->
                 <div class="col-md-6">
                     <div class="card driver-card h-100">
                         <div class="row g-0">
@@ -273,30 +122,21 @@
                                     <p class="card-text"><strong>Ülke:</strong> Japonya</p>
                                     <p class="card-text"><strong>Yaş:</strong> 24</p>
                                     <p class="card-text"><strong>En İyi Sonuç:</strong> 4. Sıra</p>
-                                    <a href="drivers.html" class="btn btn-sm btn-danger">Detaylı Bilgi</a>
+                                    <a href="drivers.html" class="btn btn-sm btn-primary">Detaylı Bilgi</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Tüm sürücüleri gör butonu -->
             <div class="text-center mt-4">
-                <a href="drivers.html" class="btn btn-danger">Tüm Sürücüleri Gör</a>
+                <a href="drivers.html" class="btn btn-primary">Tüm Sürücüleri Gör</a>
             </div>
         </div>
     </section>
-
-    <!-- Bootstrap JavaScript kütüphanesi - dropdown, collapse gibi özellikler için gerekli -->
-    <!-- Bootstrap'in interaktif özellikleri (menü açma/kapama, modal vb.) için -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Auth.js - Kimlik doğrulama fonksiyonları (updateNavbar, logout) -->
-    <!-- API_URL ve kullanıcı oturum yönetimi bu dosyada -->
     <script src="js/auth.js"></script>
-    
-    <!-- Index.js - Ana sayfaya özel JavaScript -->
+    <script src="js/common.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

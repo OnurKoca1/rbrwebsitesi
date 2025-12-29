@@ -1,30 +1,14 @@
 <!DOCTYPE html>
-<!-- HTML5 doküman tipi -->
 <html lang="tr">
-<!-- HTML kök elementi - Türkçe dil desteği -->
 <head>
-    <!-- Head bölümü -->
-    
-    <!-- Karakter kodlaması - UTF-8 -->
     <meta charset="UTF-8">
-    
-    <!-- Viewport - Mobil uyumluluk -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Sayfa başlığı -->
     <title>RedBull Racing - Profil</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <!-- Özel CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation - Üst menü -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -53,7 +37,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="cart.html">Sepetim</a>
                     </li>
-                    <!-- active: Bu sayfa aktif -->
                     <li class="nav-item">
                         <a class="nav-link active" href="profile.html">Profil</a>
                     </li>
@@ -75,94 +58,45 @@
             </div>
         </div>
     </nav>
-
-    <!-- Page Header - Sayfa başlık bölümü -->
-    <!-- py-5: Padding y (dikey) 5 birim -->
-    <!-- bg-light: Açık gri arka plan -->
     <section class="py-5 bg-light">
         <div class="container">
-            <!-- display-4: Büyük başlık -->
-            <!-- text-center: Ortalanmış metin -->
             <h1 class="display-4 text-center mb-3">Kullanıcı Profili</h1>
-            <!-- text-muted: Soluk gri renk -->
             <p class="text-center text-muted">Hesap bilgilerinizi yönetin</p>
         </div>
     </section>
-
-    <!-- Profile Section - Profil bilgileri bölümü -->
     <section class="py-5">
         <div class="container">
-            <!-- row: Bootstrap grid satırı -->
-            <!-- justify-content-center: Öğeleri yatay olarak ortala -->
             <div class="row justify-content-center">
-                <!-- col-md-8: Orta ekranlarda 8 kolon (12 kolonun 8'i) -->
                 <div class="col-md-8">
-                    <!-- Profile Information Card - Profil bilgileri kartı -->
-                    <!-- card: Bootstrap kart bileşeni -->
-                    <!-- mb-4: Margin bottom 4 birim -->
                     <div class="card mb-4">
-                        <!-- card-header: Kart başlığı -->
-                        <!-- text-white: Beyaz yazı -->
-                        <!-- style="background-color: #0d6efd;": Mavi arka plan -->
                         <div class="card-header text-white" style="background-color: #0d6efd;">
-                            <!-- mb-0: Margin bottom 0 -->
                             <h5 class="mb-0">Profil Bilgileri</h5>
                         </div>
-                        <!-- card-body: Kart içeriği -->
                         <div class="card-body">
-                            <!-- Kullanıcı bilgileri (üstte) -->
-                            <!-- text-center: Ortalanmış metin -->
-                            <!-- mb-4: Margin bottom 4 birim -->
                             <div class="text-center mb-4">
-                                <!-- id="profileName": JavaScript ile doldurulacak -->
                                 <h4 id="profileName">Kullanıcı Adı</h4>
-                                <!-- text-muted: Soluk gri renk -->
-                                <!-- id="profileEmail": JavaScript ile doldurulacak -->
                                 <p class="text-muted" id="profileEmail">user@example.com</p>
                             </div>
-                            
-                            <!-- Form -->
                             <form>
-                                <!-- row: Bootstrap grid satırı -->
-                                <!-- mb-3: Margin bottom 3 birim -->
                                 <div class="row mb-3">
-                                    <!-- Ad input -->
-                                    <!-- col-md-6: Orta ekranlarda 6 kolon (yarı genişlik) -->
                                     <div class="col-md-6">
-                                        <!-- form-label: Bootstrap form etiketi stili -->
                                         <label for="firstName" class="form-label">Ad</label>
-                                        <!-- form-control: Bootstrap form kontrol stili -->
-                                        <!-- type="text": Metin input -->
-                                        <!-- id="firstName": JavaScript için ID -->
-                                        <!-- value: Varsayılan değer (JavaScript ile güncellenecek) -->
                                         <input type="text" class="form-control" id="firstName" value="Kullanıcı">
                                     </div>
-                                    
-                                    <!-- Soyad input -->
                                     <div class="col-md-6">
                                         <label for="lastName" class="form-label">Soyad</label>
                                         <input type="text" class="form-control" id="lastName" value="Adı">
                                     </div>
                                 </div>
-                                
-                                <!-- E-posta input -->
                                 <div class="mb-3">
                                     <label for="email" class="form-label">E-posta</label>
-                                    <!-- type="email": E-posta input -->
                                     <input type="email" class="form-control" id="email" value="user@example.com">
                                 </div>
-                                
-                                <!-- Telefon input -->
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Telefon</label>
-                                    <!-- type="tel": Telefon input -->
                                     <input type="tel" class="form-control" id="phone" value="+90 555 123 4567">
                                 </div>
-                                
-                                <!-- Kaydet butonu -->
-                                <!-- text-white: Beyaz yazı -->
-                                <!-- style="background-color: #0d6efd;": Mavi arka plan -->
-                                <button type="submit" class="btn text-white" style="background-color: #0d6efd;">Kaydet</button>
+                                <button type="submit" class="btn btn-primary">Kaydet</button>
                             </form>
                         </div>
                     </div>
@@ -170,14 +104,8 @@
             </div>
         </div>
     </section>
-
-    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Auth.js - API_URL ve navbar fonksiyonları -->
     <script src="js/auth.js"></script>
-    
-    <!-- Profile.js - Profil sayfasına özel JavaScript -->
     <script src="js/profile.js"></script>
 </body>
 </html>
