@@ -12,28 +12,45 @@ Bu proje, RedBull Racing Formula 1 takımının web sitesinin klonudur. **Dinami
 - **JavaScript (Vanilla)**: API entegrasyonu ve dinamik içerik
 
 ### Backend
-- **Node.js**: Sunucu tarafı JavaScript runtime
-- **Express.js**: Web framework
+- **Python 3**: Sunucu tarafı programlama dili
+- **Flask**: Web framework
+- **Flask-CORS**: Cross-Origin Resource Sharing desteği
 - **JSON**: Veri depolama (dosya tabanlı)
 
 ## Kurulum
 
-1. **Bağımlılıkları yükleyin:**
+### Gereksinimler
+- Python 3.7 veya üzeri
+- pip (Python paket yöneticisi)
+
+### Adımlar
+
+1. **Python sanal ortamı oluşturun (önerilir):**
 ```bash
-npm install
+python -m venv venv
 ```
 
-2. **Sunucuyu başlatın:**
+2. **Sanal ortamı aktifleştirin:**
+   - Windows:
+   ```bash
+   venv\Scripts\activate
+   ```
+   - Linux/Mac:
+   ```bash
+   source venv/bin/activate
+   ```
+
+3. **Bağımlılıkları yükleyin:**
 ```bash
-npm start
+pip install -r requirements.txt
 ```
 
-veya geliştirme modu için:
+4. **Sunucuyu başlatın:**
 ```bash
-npm run dev
+python app.py
 ```
 
-3. **Tarayıcıda açın:**
+5. **Tarayıcıda açın:**
 ```
 http://localhost:3000
 ```
@@ -83,7 +100,6 @@ http://localhost:3000
 
 Veriler `data/data.json` dosyasında saklanır:
 - `news`: Haberler
-- `drivers`: Sürücü bilgileri
 - `products`: Ürünler
 - `users`: Kullanıcılar
 - `standings`: Şampiyonluk sıralamaları (sürücüler ve takımlar)
@@ -92,7 +108,8 @@ Veriler `data/data.json` dosyasında saklanır:
 
 - Sunucu çalışırken API'ler aktif olur
 - Veriler JSON dosyasında saklanır (production için veritabanı önerilir)
-- Port 3000'de çalışır (değiştirmek için server.js'i düzenleyin)
+- Port 3000'de çalışır (değiştirmek için app.py'deki PORT değişkenini düzenleyin)
+- Varsayılan admin kullanıcı: `admin` / `admin123`
 
 ## Lisans
 

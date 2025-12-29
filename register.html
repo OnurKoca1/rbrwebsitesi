@@ -1,15 +1,30 @@
 <!DOCTYPE html>
+<!-- HTML5 doküman tipi -->
 <html lang="tr">
+<!-- HTML kök elementi - Türkçe dil desteği -->
 <head>
+    <!-- Head bölümü -->
+    
+    <!-- Karakter kodlaması - UTF-8 -->
     <meta charset="UTF-8">
+    
+    <!-- Viewport - Mobil uyumluluk -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Sayfa başlığı -->
     <title>RedBull Racing - Kayıt Ol</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Özel CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - Üst menü -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -43,34 +58,73 @@
         </div>
     </nav>
 
-    <!-- Register Section -->
+    <!-- Register Section - Kayıt formu bölümü -->
+    <!-- py-5: Padding y (dikey) 5 birim -->
+    <!-- style="margin-top: 100px;": Navbar yüksekliği kadar üstten boşluk -->
     <section class="py-5" style="margin-top: 100px;">
         <div class="container">
+            <!-- row: Bootstrap grid satırı -->
+            <!-- justify-content-center: Öğeleri yatay olarak ortala -->
             <div class="row justify-content-center">
+                <!-- col-md-6: Orta ekranlarda 6 kolon -->
+                <!-- col-lg-5: Büyük ekranlarda 5 kolon -->
                 <div class="col-md-6 col-lg-5">
+                    <!-- card: Bootstrap kart bileşeni -->
+                    <!-- border-0: Kenarlık yok -->
                     <div class="card border-0">
+                        <!-- card-body: Kart içeriği -->
+                        <!-- p-5: Padding 5 birim -->
                         <div class="card-body p-5">
+                            <!-- Başlık -->
                             <h2 class="text-center mb-4">Kayıt Ol</h2>
+                            
+                            <!-- Form -->
+                            <!-- id="registerForm": JavaScript için ID -->
                             <form id="registerForm">
+                                <!-- Kullanıcı adı input -->
+                                <!-- mb-3: Margin bottom 3 birim -->
                                 <div class="mb-3">
+                                    <!-- form-label: Bootstrap form etiketi stili -->
                                     <label for="regUsername" class="form-label">Kullanıcı Adı</label>
+                                    <!-- form-control: Bootstrap form kontrol stili -->
+                                    <!-- type="text": Metin input -->
+                                    <!-- id="regUsername": JavaScript için ID (reg = register) -->
+                                    <!-- required: Zorunlu alan -->
                                     <input type="text" class="form-control" id="regUsername" required>
                                 </div>
+                                
+                                <!-- E-posta input -->
                                 <div class="mb-3">
                                     <label for="regEmail" class="form-label">E-posta</label>
+                                    <!-- type="email": E-posta input (tarayıcı otomatik validasyon yapar) -->
                                     <input type="email" class="form-control" id="regEmail" required>
                                 </div>
+                                
+                                <!-- Şifre input -->
                                 <div class="mb-3">
                                     <label for="regPassword" class="form-label">Şifre</label>
+                                    <!-- type="password": Şifre input (yazılar nokta olarak görünür) -->
                                     <input type="password" class="form-control" id="regPassword" required>
                                 </div>
+                                
+                                <!-- Şifre tekrar input -->
                                 <div class="mb-3">
                                     <label for="regPasswordConfirm" class="form-label">Şifre Tekrar</label>
                                     <input type="password" class="form-control" id="regPasswordConfirm" required>
                                 </div>
+                                
+                                <!-- Hata mesajı (başlangıçta gizli) -->
+                                <!-- alert-danger: Kırmızı alert (hata) -->
                                 <div id="registerError" class="alert alert-danger" style="display: none;"></div>
+                                
+                                <!-- Kayıt ol butonu -->
+                                <!-- btn-danger: CSS'de mavi renge çevrilmiş -->
+                                <!-- w-100: Genişlik 100% -->
+                                <!-- type="submit": Form gönderme butonu -->
                                 <button type="submit" class="btn btn-danger w-100 mb-3">Kayıt Ol</button>
                             </form>
+                            
+                            <!-- Giriş yap linki -->
                             <div class="text-center">
                                 <p class="text-muted mb-0">Zaten hesabınız var mı? <a href="login.html">Giriş Yap</a></p>
                             </div>
@@ -81,59 +135,13 @@
         </div>
     </section>
 
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Auth.js - API_URL ve navbar fonksiyonları -->
     <script src="js/auth.js"></script>
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('regUsername').value;
-            const email = document.getElementById('regEmail').value;
-            const password = document.getElementById('regPassword').value;
-            const passwordConfirm = document.getElementById('regPasswordConfirm').value;
-            const errorDiv = document.getElementById('registerError');
-            
-            if (!username || !email || !password || !passwordConfirm) {
-                errorDiv.textContent = 'Lütfen tüm alanları doldurun.';
-                errorDiv.style.display = 'block';
-                return;
-            }
-            
-            if (password !== passwordConfirm) {
-                errorDiv.textContent = 'Şifreler eşleşmiyor.';
-                errorDiv.style.display = 'block';
-                return;
-            }
-            
-            if (password.length < 6) {
-                errorDiv.textContent = 'Şifre en az 6 karakter olmalıdır.';
-                errorDiv.style.display = 'block';
-                return;
-            }
-            
-            try {
-                const response = await fetch(`${API_URL}/register`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, email, password })
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok && result.success) {
-                    alert('Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...');
-                    window.location.href = 'login.html';
-                } else {
-                    errorDiv.textContent = result.error || 'Kayıt başarısız';
-                    errorDiv.style.display = 'block';
-                }
-            } catch (error) {
-                console.error('Kayıt hatası:', error);
-                errorDiv.textContent = 'Kayıt olurken bir hata oluştu.';
-                errorDiv.style.display = 'block';
-            }
-        });
-    </script>
+    
+    <!-- Register.js - Kayıt sayfasına özel JavaScript -->
+    <script src="js/register.js"></script>
 </body>
 </html>
-

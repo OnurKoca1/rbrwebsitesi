@@ -1,0 +1,10 @@
+# Python Flask Backend Dependencies
+# Bu dosya projenin Python bağımlılıklarını listeler
+# Kurulum: pip install -r requirements.txt
+
+# Flask - Web framework, HTTP isteklerini yönetir
+Flask==3.0.0
+
+# Flask-CORS - Cross-Origin Resource Sharing desteği
+flask-cors==4.0.0
+

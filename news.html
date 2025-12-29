@@ -1,24 +1,56 @@
 <!DOCTYPE html>
+<!-- HTML5 doküman tipi -->
 <html lang="tr">
+<!-- HTML kök elementi - Türkçe dil desteği -->
 <head>
+    <!-- Head bölümü - meta bilgiler ve bağlantılar -->
+    
+    <!-- Karakter kodlaması - UTF-8 (Türkçe karakter desteği) -->
     <meta charset="UTF-8">
+    
+    <!-- Viewport - Mobil uyumluluk için -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Sayfa başlığı -->
     <title>RedBull Racing - Haberler</title>
+    
+    <!-- Bootstrap CSS - Hazır stil kütüphanesi -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons - İkon kütüphanesi -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Özel CSS dosyası -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - Üst menü (tüm sayfalarda aynı) -->
+    <!-- navbar-expand-lg: Büyük ekranlarda genişletilmiş menü -->
+    <!-- navbar-dark: Koyu tema -->
+    <!-- bg-dark: Koyu arka plan -->
+    <!-- fixed-top: Sayfanın üstüne sabitlenmiş -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <!-- container: İçeriği ortalar ve genişliği sınırlar -->
         <div class="container">
+            <!-- Logo/Marka -->
             <a class="navbar-brand" href="index.html">
                 RedBull Racing
             </a>
+            
+            <!-- Mobil menü butonu (hamburger) -->
+            <!-- navbar-toggler: Mobil menü açma/kapama butonu -->
+            <!-- data-bs-toggle="collapse": Bootstrap collapse özelliği -->
+            <!-- data-bs-target="#navbarNav": Hangi elementi açıp kapatacağı -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Menü içeriği -->
+            <!-- collapse: Mobilde gizli, tıklanınca açılır -->
+            <!-- navbar-collapse: Menü öğelerini düzenler -->
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- navbar-nav: Menü öğeleri listesi -->
+                <!-- ms-auto: Margin start auto - öğeleri sağa hizalar -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Ana Sayfa</a>
@@ -26,6 +58,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="drivers.html">Sürücüler</a>
                     </li>
+                    <!-- active: Aktif sayfa (mavi renkte görünür) -->
                     <li class="nav-item">
                         <a class="nav-link active" href="news.html">Haberler</a>
                     </li>
@@ -41,15 +74,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="profile.html">Profil</a>
                     </li>
+                    <!-- Giriş yapmamış kullanıcı için -->
                     <li class="nav-item" id="loginNavItem">
                         <a class="nav-link" href="login.html">Giriş Yap</a>
                     </li>
+                    <!-- Giriş yapmış kullanıcı için dropdown menü -->
                     <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+                        <!-- dropdown-toggle: Dropdown menüyü açan buton -->
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
                             <span id="userNameNav"></span>
                         </a>
+                        <!-- dropdown-menu: Açılır menü içeriği -->
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="profile.html">Profil</a></li>
+                            <!-- Admin için özel link -->
                             <li id="adminNavLink" style="display: none;"><a class="dropdown-item" href="admin.html">Admin Paneli</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#" onclick="logout()">Çıkış Yap</a></li>
@@ -60,21 +98,37 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- Page Header - Sayfa başlık bölümü -->
+    <!-- py-5: Padding y (dikey) 5 birim - üst ve alt boşluk -->
+    <!-- bg-light: Açık gri arka plan (#f8f9fa) -->
     <section class="py-5 bg-light">
+        <!-- container: İçeriği ortalar -->
         <div class="container">
+            <!-- display-4: Büyük başlık stili (2.5rem) -->
+            <!-- text-center: Metni ortala -->
+            <!-- mb-3: Margin bottom 3 birim (1rem) -->
             <h1 class="display-4 text-center mb-3">Haberler</h1>
+            
+            <!-- text-muted: Soluk gri renk -->
             <p class="text-center text-muted">RedBull Racing ve Formula 1'den son haberler</p>
         </div>
     </section>
 
-    <!-- News Grid -->
+    <!-- News Grid - Haberler grid bölümü -->
     <section class="py-5">
         <div class="container">
+            <!-- row: Bootstrap grid satırı -->
+            <!-- g-4: Gap 4 birim - öğeler arası boşluk (1.5rem) -->
+            <!-- id="newsGrid": JavaScript ile buraya haberler eklenecek -->
             <div class="row g-4" id="newsGrid">
-                <!-- Haberler API'den yüklenecek -->
+                <!-- Yükleme göstergesi - başlangıçta gösterilir -->
+                <!-- col-12: Tüm genişliği kaplar (12 kolon) -->
                 <div class="col-12 text-center">
+                    <!-- spinner-border: Bootstrap yükleme animasyonu (dönen daire) -->
+                    <!-- text-danger: CSS'de mavi renge çevrilmiş -->
+                    <!-- role="status": Erişilebilirlik için -->
                     <div class="spinner-border text-danger" role="status">
+                        <!-- visually-hidden: Görsel olarak gizli ama ekran okuyucular için -->
                         <span class="visually-hidden">Yükleniyor...</span>
                     </div>
                 </div>
@@ -82,51 +136,13 @@
         </div>
     </section>
 
+    <!-- Bootstrap JavaScript - Dropdown, collapse gibi özellikler için -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Auth.js - Kimlik doğrulama fonksiyonları ve API_URL -->
     <script src="js/auth.js"></script>
-    <script>
-        // API'den haberleri yükle (auth.js'deki API_URL kullanılıyor)
-        async function loadNews() {
-            try {
-                const response = await fetch(`${API_URL}/news`);
-                const news = await response.json();
-                
-                const newsGrid = document.getElementById('newsGrid');
-                newsGrid.innerHTML = '';
-                
-                if (news.length === 0) {
-                    newsGrid.innerHTML = '<div class="col-12 text-center"><p>Henüz haber bulunmamaktadır.</p></div>';
-                    return;
-                }
-                
-                news.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'col-md-4';
-                    // İçeriği kısalt (150 karakter)
-                    const shortContent = item.content.length > 150 
-                        ? item.content.substring(0, 150) + '...' 
-                        : item.content;
-                    card.innerHTML = `
-                        <div class="card news-card h-100">
-                            <img src="${item.image || 'images/news-1.jpg'}" class="card-img-top" alt="${item.title}">
-                            <div class="card-body">
-                                <h5 class="card-title">${item.title}</h5>
-                                <p class="card-text">${shortContent}</p>
-                                <a href="news-detail.html?id=${item.id}" target="_blank" class="btn btn-sm btn-outline-danger">Devamını Oku</a>
-                            </div>
-                        </div>
-                    `;
-                    newsGrid.appendChild(card);
-                });
-            } catch (error) {
-                console.error('Haberler yüklenirken hata:', error);
-                document.getElementById('newsGrid').innerHTML = '<div class="col-12 text-center"><p class="text-danger">Haberler yüklenirken bir hata oluştu. Lütfen sunucunun çalıştığından emin olun.</p></div>';
-            }
-        }
-        
-        // Sayfa yüklendiğinde haberleri çek
-        document.addEventListener('DOMContentLoaded', loadNews);
-    </script>
+    
+    <!-- News.js - Haberler sayfasına özel JavaScript -->
+    <script src="js/news.js"></script>
 </body>
 </html>
-

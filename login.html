@@ -1,15 +1,30 @@
 <!DOCTYPE html>
+<!-- HTML5 doküman tipi -->
 <html lang="tr">
+<!-- HTML kök elementi - Türkçe dil desteği -->
 <head>
+    <!-- Head bölümü -->
+    
+    <!-- Karakter kodlaması - UTF-8 -->
     <meta charset="UTF-8">
+    
+    <!-- Viewport - Mobil uyumluluk -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Sayfa başlığı -->
     <title>RedBull Racing - Giriş</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Özel CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - Üst menü -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -43,27 +58,68 @@
         </div>
     </nav>
 
-    <!-- Login Section -->
+    <!-- Login Section - Giriş formu bölümü -->
+    <!-- py-5: Padding y (dikey) 5 birim -->
+    <!-- style="margin-top: 100px;": Navbar yüksekliği kadar üstten boşluk -->
     <section class="py-5" style="margin-top: 100px;">
         <div class="container">
+            <!-- row: Bootstrap grid satırı -->
+            <!-- justify-content-center: Öğeleri yatay olarak ortala -->
             <div class="row justify-content-center">
+                <!-- col-md-6: Orta ekranlarda 6 kolon -->
+                <!-- col-lg-4: Büyük ekranlarda 4 kolon (daha dar form) -->
                 <div class="col-md-6 col-lg-4">
+                    <!-- card: Bootstrap kart bileşeni -->
+                    <!-- border-0: Kenarlık yok -->
                     <div class="card border-0">
+                        <!-- card-body: Kart içeriği -->
+                        <!-- p-5: Padding 5 birim (her yönden) -->
                         <div class="card-body p-5">
+                            <!-- Başlık -->
+                            <!-- text-center: Ortalanmış metin -->
+                            <!-- mb-4: Margin bottom 4 birim -->
                             <h2 class="text-center mb-4">Giriş Yap</h2>
+                            
+                            <!-- Form -->
+                            <!-- id="loginForm": JavaScript için ID -->
                             <form id="loginForm">
+                                <!-- Kullanıcı adı veya e-posta input -->
+                                <!-- mb-3: Margin bottom 3 birim -->
                                 <div class="mb-3">
+                                    <!-- form-label: Bootstrap form etiketi stili -->
                                     <label for="username" class="form-label">Kullanıcı Adı veya E-posta</label>
+                                    <!-- form-control: Bootstrap form kontrol stili -->
+                                    <!-- type="text": Metin input -->
+                                    <!-- id="username": JavaScript için ID -->
+                                    <!-- required: Zorunlu alan (HTML5 validasyon) -->
                                     <input type="text" class="form-control" id="username" required>
                                 </div>
+                                
+                                <!-- Şifre input -->
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Şifre</label>
+                                    <!-- type="password": Şifre input (yazılar nokta olarak görünür) -->
                                     <input type="password" class="form-control" id="password" required>
                                 </div>
+                                
+                                <!-- Hata mesajı (başlangıçta gizli) -->
+                                <!-- alert: Bootstrap alert bileşeni -->
+                                <!-- alert-danger: Kırmızı alert (hata) -->
+                                <!-- style="display: none;": Başlangıçta gizli, hata olursa gösterilir -->
                                 <div id="loginError" class="alert alert-danger" style="display: none;"></div>
+                                
+                                <!-- Giriş butonu -->
+                                <!-- btn-danger: CSS'de mavi renge çevrilmiş -->
+                                <!-- w-100: Genişlik 100% -->
+                                <!-- mb-3: Margin bottom 3 birim -->
+                                <!-- type="submit": Form gönderme butonu -->
                                 <button type="submit" class="btn btn-danger w-100 mb-3">Giriş Yap</button>
                             </form>
+                            
+                            <!-- Kayıt ol linki -->
                             <div class="text-center">
+                                <!-- text-muted: Soluk gri renk -->
+                                <!-- mb-0: Margin bottom 0 -->
                                 <p class="text-muted mb-0">Hesabınız yok mu? <a href="register.html">Kayıt Ol</a></p>
                             </div>
                         </div>
@@ -73,57 +129,13 @@
         </div>
     </section>
 
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Auth.js - API_URL ve navbar fonksiyonları -->
     <script src="js/auth.js"></script>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorDiv = document.getElementById('loginError');
-            
-            if (!username || !password) {
-                errorDiv.textContent = 'Lütfen kullanıcı adı ve şifre girin.';
-                errorDiv.style.display = 'block';
-                return;
-            }
-            
-            try {
-                const response = await fetch(`${API_URL}/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password })
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok && result.success) {
-                    // Kullanıcı bilgilerini localStorage'a kaydet
-                    localStorage.setItem('user', JSON.stringify({
-                        id: result.user.id,
-                        username: result.user.username,
-                        email: result.user.email,
-                        role: result.user.role
-                    }));
-                    
-                    // Admin ise admin paneline, değilse ana sayfaya yönlendir
-                    if (result.user.role === 'admin') {
-                        window.location.href = 'admin.html';
-                    } else {
-                        window.location.href = 'index.html';
-                    }
-                } else {
-                    errorDiv.textContent = result.error || 'Giriş başarısız';
-                    errorDiv.style.display = 'block';
-                }
-            } catch (error) {
-                console.error('Giriş hatası:', error);
-                errorDiv.textContent = 'Giriş yapılırken bir hata oluştu.';
-                errorDiv.style.display = 'block';
-            }
-        });
-    </script>
+    
+    <!-- Login.js - Giriş sayfasına özel JavaScript -->
+    <script src="js/login.js"></script>
 </body>
 </html>
-
