@@ -1,11 +1,5 @@
 /* RedBull Racing Custom Styles */
 
-:root {
-    --redbull-red: #dc3545;
-    --redbull-blue: #0d6efd;
-    --redbull-dark: #0a0a0a;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 76px;
@@ -59,8 +53,8 @@ body {
 
 /* Buttons */
 .btn-danger {
-    background-color: var(--redbull-blue);
-    border-color: var(--redbull-blue);
+    background-color: #0d6efd;
+    border-color: #0d6efd;
 }
 
 .btn-danger:hover {
@@ -69,19 +63,19 @@ body {
 }
 
 .btn-outline-danger {
-    color: var(--redbull-blue);
-    border-color: var(--redbull-blue);
+    color: #0d6efd;
+    border-color: #0d6efd;
 }
 
 .btn-outline-danger:hover {
-    background-color: var(--redbull-blue);
-    border-color: var(--redbull-blue);
+    background-color: #0d6efd;
+    border-color: #0d6efd;
     color: white;
 }
 
 /* Navbar */
 .navbar-dark {
-    background-color: var(--redbull-dark) !important;
+    background-color: #0a0a0a !important;
 }
 
 /* Driver Profile */
@@ -112,7 +106,7 @@ body {
 .product-price {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--redbull-red);
+    color: #dc3545;
 }
 
 /* Admin Panel */

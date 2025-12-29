@@ -47,13 +47,8 @@ http://localhost:3000
 - `PUT /api/news/:id` - Haber güncelle
 - `DELETE /api/news/:id` - Haber sil
 
-### Sürücüler
-- `GET /api/drivers` - Tüm sürücüleri getir
-- `GET /api/drivers/:id` - Belirli bir sürücüyü getir
-
 ### Ürünler
 - `GET /api/products` - Tüm ürünleri getir
-- `GET /api/products/:id` - Belirli bir ürünü getir
 - `POST /api/products` - Yeni ürün ekle
 - `PUT /api/products/:id` - Ürün güncelle
 - `DELETE /api/products/:id` - Ürün sil

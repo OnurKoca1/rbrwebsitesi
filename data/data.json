@@ -1,36 +1,12 @@
 {
   "news": [
     {
-      "id": 1,
-      "title": "sa",
-      "content": "sa",
-      "image": "images/news-1.jpg",
-      "date": "2025-12-28",
-      "author": "Admin"
-    },
-    {
-      "id": 2,
-      "title": "Merhaba",
-      "content": "sa",
-      "image": "https://cdn-6.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg",
-      "date": "2025-12-28",
-      "author": "Admin"
-    },
-    {
       "id": 3,
       "title": "Merhabalar",
       "content": "Ferrari kariyerinin ilk yılında oldukça zorlanan Hamilton, sezon boyunca podyuma çıkamadı. Bu tablo, kariyerinde ilk kez bir sezonu podyumsuz tamamlaması anlamına geldi.\n\nHamilton, 2026’da yürürlüğe girecek yeni teknik regülasyonların kendisi için bir fırsat yaratmasını umut ediyor. Ancak padok kulislerinde Mercedes motorunun yeni dönemde referans olabileceği konuşuluyor.\n\nCollins, Sky F1’e yaptığı açıklamada şu ifadeleri kullandı: “Eğer 2026’yı düşünüyorsa, bence Mercedes’te kalmak daha doğru bir seçenek olurdu.”\n\nX\n00:00 / 00:39\nTakımların pilotları ikna etmeye çalışırken büyük vaatlerde bulunduğunu vurgulayan Collins, “Herkes size bir şey satmaya çalışıyor ama kimse size otomobilin ne kadar iyi olacağını gerçekten kanıtlayamıyor” dedi.\n\nHamilton’ın Ferrari’ye transferi, spor tarihinin en başarılı pilotunun en köklü takımla buluşması açısından büyük yankı uyandırmıştı. Ancak bu birliktelik, şu ana kadar beklenen sportif karşılığı veremedi.\n\nYine de Collins, Hamilton’ın bu kararı neden aldığını anlayabildiğini söyledi: “Kırmızı Ferrari’nin o küçük çocuk cazibesi devreye girdi. O arabayı sürme, kendini kırmızı tulumun içinde görme hayali.”\n\nCollins'in bu sözleri akıllara Sebastien Vettel'in o meşhur demecini getirdi: \"Herkes bir Ferrari fanıdır. Öyle olmadıklarını söyleseler de öyledirler. Mercedes'teki kişilere bile gitsen 'Biz Mercedes'iz en iyi takımız' diye böbürlenseler bile Ferrari fanıdırlar.\"\n\nBu hayalin herkes için çekici olduğunu belirten Collins, “Sezon başında hepimiz buna inandık. Harika olacak sandık ama yıl beklenenden çok daha zor geçti” ifadelerini kullandı.\n\nCollins’e göre, eğer hedef gerçekten 2026 ise, Hamilton bu sürece Mercedes’te daha iyi hazırlanabilirdi.\n:\n\n:\n:\n\n::\n:\n:\n:\n:\n::\n:\n:\n::\n::\n:\n\n::\n:\n:\n\n::\n:\n:\n:\n",
       "image": "images/news-6.jpg",
       "date": "2025-12-28",
       "author": "Admin"
-    },
-    {
-      "id": 4,
-      "date": "2025-12-28",
-      "author": "Admin",
-      "title": "sa",
-      "content": "asfafasfassafasfas",
-      "image": "images/news-1.jpg"
     }
   ],
   "drivers": [
